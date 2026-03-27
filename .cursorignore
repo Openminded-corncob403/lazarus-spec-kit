@@ -1,0 +1,72 @@
+# ===========================================================================
+# .cursorignore — Lazarus Spec Kit
+# 
+# Bloqueia COMPLETAMENTE o acesso do Cursor aos padrões listados:
+#   • Busca semântica (Ctrl+K / @Codebase)
+#   • Sugestões via Tab e Agent
+#   • Edição inline e referências @-mention
+#
+# Sintaxe idêntica ao .gitignore. O Cursor já herda o .gitignore — este
+# arquivo adiciona restrições específicas que vão além do controle de versão.
+#
+# Docs: https://cursor.com/docs/reference/ignore-file
+# ===========================================================================
+
+
+# ---------------------------------------------------------------------------
+# Saída de compilação Lazarus/FPC
+# Arquivos binários: PPU (unidades compiladas), OBJ, LIB e markers do Lazarus.
+# Fornecer esses binários ao LLM inchacontext sem benefício algum.
+# ---------------------------------------------------------------------------
+**/*.ppu
+**/*.o
+**/*.a
+**/*.compiled
+**/*.res
+**/*.rsj
+
+# ---------------------------------------------------------------------------
+# Diretórios de saída do compilador
+# O Lazarus gera lib/{target}/ com todos os binários compilados.
+# ---------------------------------------------------------------------------
+**/lib/
+**/units/
+
+# ---------------------------------------------------------------------------
+# Backups automáticos gerados pelo Lazarus IDE
+# Versões defasadas que introduzem ruído no contexto do LLM.
+# ---------------------------------------------------------------------------
+**/backup/
+**/*.bak
+**/*.orig
+
+# ---------------------------------------------------------------------------
+# Arquivos de sessão Lazarus (.lps)
+# Contêm estado da IDE (geometria de janelas, abas abertas etc.).
+# Sem valor semântico para geração ou análise de código.
+# ---------------------------------------------------------------------------
+**/*.lps
+
+# ---------------------------------------------------------------------------
+# Binários não-textuais pesados
+# PDFs e imagens não trazem informação legível ao LLM.
+# ---------------------------------------------------------------------------
+*.pdf
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.gif
+**/*.ico
+
+# ---------------------------------------------------------------------------
+# Pastas fora do escopo de implementação
+# ---------------------------------------------------------------------------
+/doc/
+/examples/
+
+# ---------------------------------------------------------------------------
+# Artefatos de sistema operacional
+# ---------------------------------------------------------------------------
+**/.DS_Store
+**/Thumbs.db
+**/desktop.ini

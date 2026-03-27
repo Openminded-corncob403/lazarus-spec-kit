@@ -1,0 +1,109 @@
+{
+  // =========================================================================
+  // VS Code — Lazarus Spec Kit
+  //
+  // GITHUB COPILOT — Exclusão de Conteúdo
+  // O Copilot Chat (extensão VS Code) usa search.exclude e files.exclude
+  // para determinar o que está no workspace context. Padrões aqui excluem
+  // artefatos compilados e binários do contexto de sugestões e chat.
+  //
+  // NOTA: Content exclusion oficial do Copilot (completions + inline) é
+  // configurada em Settings > Copilot > Content Exclusion no GitHub.com.
+  // Estas configurações reforçam a exclusão no nível do workspace local.
+  // =========================================================================
+
+  // -------------------------------------------------------------------------
+  // Ocultar do Explorer do VS Code (e do contexto de workspace do Copilot)
+  // -------------------------------------------------------------------------
+  "files.exclude": {
+    // Documentação e exemplos fora do escopo
+    "doc": true,
+    "examples": true,
+
+    // Saída de compilação Lazarus/FPC
+    "**/lib": true,
+    "**/units": true,
+    "**/*.ppu": true,
+    "**/*.o": true,
+    "**/*.a": true,
+    "**/*.compiled": true,
+    "**/*.res": true,
+    "**/*.rsj": true,
+
+    // Arquivos de sessão Lazarus (estado do IDE)
+    "**/*.lps": true,
+
+    // Backups
+    "**/backup": true,
+    "**/*.bak": true,
+    "**/*.orig": true,
+
+    // Artefatos de sistema operacional
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+
+  // -------------------------------------------------------------------------
+  // Excluir da busca (search.exclude estende files.exclude automaticamente)
+  // O Copilot Chat usa o índice de busca do VS Code como base do contexto.
+  // -------------------------------------------------------------------------
+  "search.exclude": {
+    // Documentação e exemplos fora do escopo
+    "doc/**": true,
+    "examples/**": true,
+
+    // Saída de compilação
+    "**/lib/**": true,
+    "**/units/**": true,
+    "**/*.ppu": true,
+    "**/*.o": true,
+    "**/*.a": true,
+    "**/*.compiled": true,
+    "**/*.res": true,
+    "**/*.rsj": true,
+
+    // Sessão e backups
+    "**/*.lps": true,
+    "**/backup/**": true,
+    "**/*.bak": true,
+    "**/*.orig": true,
+
+    // PDFs e imagens (binários não textuais)
+    "*.pdf": true,
+    "**/*.png": true,
+    "**/*.jpg": true,
+    "**/*.jpeg": true,
+    "**/*.gif": true,
+    "**/*.ico": true
+  },
+
+  // -------------------------------------------------------------------------
+  // Associações de linguagem — garante syntax highlight correto para Pascal
+  // -------------------------------------------------------------------------
+  "[pascal]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.rulers": [120]
+  },
+  "files.associations": {
+    "*.pas": "pascal",
+    "*.pp": "pascal",
+    "*.lpr": "pascal",
+    "*.lfm": "xml"
+  },
+
+  // -------------------------------------------------------------------------
+  // Copilot — Instruções de contexto do workspace
+  // Habilita leitura do .github/copilot-instructions.md como contexto global
+  // -------------------------------------------------------------------------
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+
+  // -------------------------------------------------------------------------
+  // Excluir arquivos binários de análise do Copilot
+  // -------------------------------------------------------------------------
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "scminput": false
+  }
+}

@@ -1,0 +1,69 @@
+# ===========================================================================
+# .geminiignore — Lazarus Spec Kit
+#
+# Controla quais arquivos o Gemini CLI exclui ao:
+#   • Montar o directory tree do projeto (context.includeDirectoryTree)
+#   • Resolver referências @arquivo na conversa
+#   • Varrer GEMINI.md em subdiretórios
+#
+# Respeitado por default via:
+#   context.fileFiltering.respectGeminiIgnore = true (padrão)
+#
+# Sintaxe idêntica ao .gitignore (suporta **, *, ?, !, #).
+# O Gemini CLI já herda o .gitignore — este arquivo adiciona padrões
+# específicos para otimizar o contexto do modelo.
+#
+# Docs: https://github.com/google-gemini/gemini-cli/blob/main/docs/reference/configuration.md
+# ===========================================================================
+
+
+# ---------------------------------------------------------------------------
+# Saída de compilação Lazarus/FPC (binários)
+# PPU = Pascal Pre-compiled Unit: análogo a .class no Java.
+# Nenhum desses formatos contém informação legível ou útil ao Gemini.
+# ---------------------------------------------------------------------------
+**/*.ppu
+**/*.o
+**/*.a
+**/*.compiled
+**/*.res
+**/*.rsj
+
+# ---------------------------------------------------------------------------
+# Diretórios completos de saída do compilador
+# ---------------------------------------------------------------------------
+**/lib/
+**/units/
+
+# ---------------------------------------------------------------------------
+# Backups automáticos do Lazarus IDE
+# ---------------------------------------------------------------------------
+**/backup/
+**/*.bak
+**/*.orig
+**/*.lps
+
+# ---------------------------------------------------------------------------
+# Binários pesados não textuais
+# Com 1M de tokens de contexto, o Gemini suportaria o PDF, mas ele seria
+# ineficiente — prefer que o conteúdo semântico venha dos .md e .pas.
+# ---------------------------------------------------------------------------
+*.pdf
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.gif
+**/*.ico
+
+# ---------------------------------------------------------------------------
+# Pastas fora do escopo de implementação
+# ---------------------------------------------------------------------------
+/doc/
+/examples/
+
+# ---------------------------------------------------------------------------
+# Artefatos de sistema operacional
+# ---------------------------------------------------------------------------
+**/.DS_Store
+**/Thumbs.db
+**/desktop.ini

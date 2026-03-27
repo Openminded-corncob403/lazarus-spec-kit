@@ -1,0 +1,38 @@
+# ===========================================================================
+# .cursorindexingignore — Lazarus Spec Kit
+#
+# Exclui arquivos APENAS da indexação semântica do Cursor.
+# Diferente do .cursorignore, os arquivos listados aqui ainda ficam
+# acessíveis via @mention ou referência direta — mas NÃO aparecem nos
+# resultados de busca de codebase (@Codebase, Ctrl+K contextual).
+#
+# Use para arquivos grandes gerados automaticamente ou conteúdo de apoio
+# que entope a janela de resultados de busca sem ser o foco do trabalho.
+#
+# Docs: https://cursor.com/docs/reference/ignore-file#cursorindexingignore
+# ===========================================================================
+
+
+# ---------------------------------------------------------------------------
+# Documentação em PDF — não indexável de forma significativa e muito pesada
+# ---------------------------------------------------------------------------
+*.pdf
+
+# ---------------------------------------------------------------------------
+# Arquivos de exemplo i18n compilados (resources gerados)
+# Os fontes fontes .pas em src/ já documentam a intenção; versões .ppu/.compiled
+# dentro de lib/ são ruído puro no índice.
+# ---------------------------------------------------------------------------
+examples/i8nApp/lib/**
+
+# ---------------------------------------------------------------------------
+# Changelogs e arquivos gerados automaticamente que crescem sem cessar
+# ---------------------------------------------------------------------------
+**/CHANGELOG.md
+**/CHANGELOG.txt
+
+# ---------------------------------------------------------------------------
+# Pastas de documentação e exemplos
+# ---------------------------------------------------------------------------
+doc/**
+examples/**

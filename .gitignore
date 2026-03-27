@@ -1,0 +1,89 @@
+# ===========================================================================
+# .gitignore — Lazarus Spec Kit
+# Fundação universal: todos os clientes de IA que respeitam .gitignore
+# herdam estas regras automaticamente (Cursor, Gemini CLI, Kiro, Claude Code).
+# ===========================================================================
+
+
+# ---------------------------------------------------------------------------
+# Lazarus/FPC — Saída de compilação (binários, não têm valor para IA ou SCM)
+# ---------------------------------------------------------------------------
+*.ppu
+*.o
+*.a
+*.compiled
+*.or
+*.res
+*.rsj
+
+# Diretórios de saída do compilador Lazarus
+**/lib/
+**/units/
+**/backup_bin/
+
+# Executáveis gerados
+*.exe
+*.dll
+*.so
+*.dylib
+
+# ---------------------------------------------------------------------------
+# Lazarus IDE — Arquivos de sessão e estado (não são código, mudam por usuário)
+# ---------------------------------------------------------------------------
+*.lps
+*.lps.bak
+
+# ---------------------------------------------------------------------------
+# Backups automáticos do Lazarus e editores
+# ---------------------------------------------------------------------------
+**/backup/
+*.bak
+*~
+*.orig
+*.swp
+*.swo
+
+# ---------------------------------------------------------------------------
+# Arquivos binários pesados (PDFs, imagens — não indexáveis)
+# ---------------------------------------------------------------------------
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+
+# ---------------------------------------------------------------------------
+# Pastas de documentação e exemplos (fora da estratégia de desenvolvimento)
+# ---------------------------------------------------------------------------
+/doc/
+/examples/
+
+# ---------------------------------------------------------------------------
+# Mercurial (repositório interno — não deve ser rastreado pelo Git)
+# ---------------------------------------------------------------------------
+.hg/
+
+# ---------------------------------------------------------------------------
+# Sistema operacional
+# ---------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ---------------------------------------------------------------------------
+# Editores e IDEs
+# ---------------------------------------------------------------------------
+.idea/
+*.iml
+*.suo
+*.user
+.vscode/**
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
